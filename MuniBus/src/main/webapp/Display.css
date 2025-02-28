@@ -1,0 +1,35 @@
+@charset "UTF-8";
+body {
+        height: 90vh;
+        align-content: center;
+        font-family: Arial, sans-serif;
+    }
+
+    form {
+        border: 1px solid black;
+        padding: 10px;
+        box-shadow: 10px 10px 10px black;
+        width: fit-content;
+        place-self: center;
+        justify-items: center;
+    }
+
+    input[type="button"] {
+        width: 60px;
+        height: 60px;
+        margin: 20px;
+        font-size: 30px;
+        font-weight: 990;
+    }
+
+    input[type="submit"], h2 {
+        width: 290px;
+        padding: 20px;
+        margin: 20px;
+        font-size: 20px;
+        background-color: red;
+        color: white;
+        font-weight: 990;
+        border-radius: 10px;
+        text-align: center;
+    }

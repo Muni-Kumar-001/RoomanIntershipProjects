@@ -14,46 +14,93 @@ import java.io.IOException;
 public class SeatBookSrv extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
+    // Array to track the status of seats (false = available, true = booked)
+    private boolean seats[];
+
     public SeatBookSrv() {
-        // TODO Auto-generated constructor stub
+        // Initialize an array of 20 seats (all available initially)
+        seats = new boolean[20]; // false means unreserved, true means reserved
     }
 
     /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     * Handles GET requests, displaying the seat booking interface
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Get the selected seat from the request
-        String selectedSeat = request.getParameter("selectedSeat");
+        // Generate HTML output for displaying seats and booking form
+        StringBuilder temp = new StringBuilder();
+        temp.append("<!DOCTYPE html>\r\n")
+            .append("<html>\r\n")
+            .append("<head>\r\n")
+            .append("<meta charset=\"UTF-8\">\r\n")
+            .append("<title>Bus Seat Booking</title>\r\n")
+            .append("<link rel=\"stylesheet\" href=\"Display.css\">\r\n")
+            .append("<script>\r\n")
+            .append("    // JavaScript function to set the selected seat value\r\n")
+            .append("    function selectSeat(value) {\r\n")
+            .append("        // Set the value of the hidden input field to the selected seat number\r\n")
+            .append("        document.getElementById(\"selectedSeat\").value = value;\r\n")
+            .append("    }\r\n")
+            .append("</script>\r\n")
+            .append("</head>\r\n")
+            .append("<body>\r\n")
+            .append("    <form action=\"SeatBookSrv\" method=\"POST\">\r\n")
+            .append("        <table>\r\n")
+            .append("            <tr>\r\n")
+            .append("                <td colspan=\"3\"><h2>Muni Bus Seat Booking</h2></td>\r\n")
+            .append("            </tr>\r\n");
 
-        // Set the content type to HTML to display a response
-        response.setContentType("text/html");
+        // Add the seat buttons dynamically (same as in doGet)
+        for (int i = 0; i < 20; i++) {
+            char seatLabel = (char) ('A' + i); // Seat labels: A, B, C, ..., T
+            String color = seats[i] ? "red" : "green"; // Red for reserved, green for available
 
-        // Get the response writer to write the HTML response
-        response.getWriter().append("<html><body>")
-                            .append("<h2>Seat Booking Confirmation</h2>");
+            // Start a new row every 3 seats
+            if (i % 3 == 0) {
+                temp.append("            <tr>\r\n");
+            }
 
-        // Check if a seat was selected
-        if (selectedSeat != null && !selectedSeat.isEmpty()) {
-            // Display the selected seat
-            response.getWriter().append("<p>You have selected seat: <strong>" + selectedSeat + "</strong></p>");
-        } else {
-            // Handle the case where no seat was selected (if needed)
-            response.getWriter().append("<p>No seat selected. Please try again.</p>");
+            // Add a button for the current seat
+            temp.append("                <td><input type=\"button\" value=\"" + seatLabel + "\" onclick=\"selectSeat('" + seatLabel + "')\" style=\"background-color: " + color + ";\"></td>\r\n");
+
+            // Close the row after every 3 seats
+            if (i % 3 == 2 || i == 19) { // Close row after 3 seats or after the last seat
+                temp.append("            </tr>\r\n");
+            }
         }
 
-        // Close the HTML tags
-        response.getWriter().append("</body></html>");
+        // Add a hidden input field for the selected seat
+        temp.append("        </table>\r\n")
+            .append("        <input type=\"hidden\" id=\"selectedSeat\" name=\"selectedSeat\">\r\n")
+            .append("        <input type=\"submit\" value=\"Book My Seat\"/>\r\n");
+
+        // If a seat was booked (after form submission), show success/error message
+        String selectedSeat = request.getParameter("selectedSeat");
+        if (selectedSeat != null && !selectedSeat.isEmpty()) {
+            int seatIndex = selectedSeat.charAt(0) - 'A';
+            if (!seats[seatIndex]) {
+                // Seat booking successful
+                seats[seatIndex] = true;
+                temp.append("<p style='color:green;'>Seat " + selectedSeat + " has been successfully booked!</p>");
+            } else {
+                // Seat already booked
+                temp.append("<p style='color:red;'>Sorry, seat " + selectedSeat + " is already taken. Please select another seat.</p>");
+            }
+        }
+
+        // Close HTML tags
+        temp.append("    </form>\r\n")
+            .append("</body>\r\n")
+            .append("</html>\r\n");
+
+        // Send the HTML as the response
+        response.getWriter().append(temp.toString());
     }
 
     /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     * Handles POST requests, performing the seat booking logic
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Since the seat selection is being sent as a POST request, 
-        // we can call the doGet method to handle both GET and POST requests.
+        // Forward the request to doGet to render the updated seat booking interface
         doGet(request, response);
     }
 }

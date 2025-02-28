@@ -2,93 +2,62 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-	body{
-	    height: 90vh;
-	    align-content: center;
-	}
-	form{
-		border:1px solid black;
-		padding:10px;
-		box-shadow:10px 10px 10px black;
-		width: fit-content;
-    	place-self: center;
-    	justify-items:center;
-	}
-	input[type="button"]{
-		width:60px;
-		height:60px;
-		margin:20px;
-		font-size:30px;
-		font-weight:990;
-	}
-	input[type="submit"], h2{
-		width:290px;
-		padding: 20px;
-		margin:20px;
-		font-size:20px;
-		background-color: red;
-		color: white;
-		font-weight:990;
-		border-radius: 10px;
-		text-align: center;
-	}
-</style>
+<title>Bus Seat Booking</title>
+<link rel="stylesheet" href="Display.css">
 <script>
-// JavaScript function to set the selected seat value
-function selectSeat(value) {
-    // Set the value of the hidden input field to the selected seat number
-    document.getElementById("selectedSeat").value = value;
-}
+    // JavaScript function to set the selected seat value
+    function selectSeat(value) {
+        // Set the value of the hidden input field to the selected seat number
+        document.getElementById("selectedSeat").value = value;
+    }
 </script>
 </head>
 <body>
-<form action="SeatBookSrv" method="POST">
-	<table>
-		<tr>
-			<td colspan=3><h2>Muni Bus</h2></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="1" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="2" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="3" onclick="selectSeat(this.value)"></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="4" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="5" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="6" onclick="selectSeat(this.value)"></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="7" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="8" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="9" onclick="selectSeat(this.value)"></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="10" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="11" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="12" onclick="selectSeat(this.value)"></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="13" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="14" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="15" onclick="selectSeat(this.value)"></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="16" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="17" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="18" onclick="selectSeat(this.value)"></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="19" onclick="selectSeat(this.value)"></td>
-			<td><input type="button" value="20" onclick="selectSeat(this.value)"></td>
-		</tr>
-	</table>
-	
-	<!-- Hidden input field to store the selected seat value -->
-	<input type="hidden" id="selectedSeat" name="selectedSeat">
-	
-	<input type="submit" value="Book My Seat"/>
-</form>
+    <form action="SeatBookSrv" method="POST">
+        <table>
+            <tr>
+                <td colspan="3"><h2>Muni Bus Seat Booking</h2></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="A" onclick="selectSeat('A')"></td>
+                <td><input type="button" value="B" onclick="selectSeat('B')"></td>
+                <td><input type="button" value="C" onclick="selectSeat('C')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="D" onclick="selectSeat('D')"></td>
+                <td><input type="button" value="E" onclick="selectSeat('E')"></td>
+                <td><input type="button" value="F" onclick="selectSeat('F')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="G" onclick="selectSeat('G')"></td>
+                <td><input type="button" value="H" onclick="selectSeat('H')"></td>
+                <td><input type="button" value="I" onclick="selectSeat('I')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="J" onclick="selectSeat('J')"></td>
+                <td><input type="button" value="K" onclick="selectSeat('K')"></td>
+                <td><input type="button" value="L" onclick="selectSeat('L')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="M" onclick="selectSeat('M')"></td>
+                <td><input type="button" value="N" onclick="selectSeat('N')"></td>
+                <td><input type="button" value="O" onclick="selectSeat('O')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="P" onclick="selectSeat('P')"></td>
+                <td><input type="button" value="Q" onclick="selectSeat('Q')"></td>
+                <td><input type="button" value="R" onclick="selectSeat('R')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="S" onclick="selectSeat('S')"></td>
+                <td><input type="button" value="T" onclick="selectSeat('T')"></td>
+            </tr>
+        </table>
+
+        <!-- Hidden input field to store the selected seat value -->
+        <input type="hidden" id="selectedSeat" name="selectedSeat">
+
+        <input type="submit" value="Book My Seat"/>
+    </form>
 </body>
 </html>
