@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	form{
+		justify-items:center;
+		height: 100vh;
+    	align-content: center;
+	}
+	table{
+		border-collapse:collapse;
+	}
+	table,td,tr{
+		border:1px dotted black;
+	}
+	td{
+		padding:10px;
+	}
+	
+</style>
+</head>
+<body>
+	<form action="#">
+	<h2 style="color:red;">Please signup here!!!</h2>
+	<table>
+		<tr>
+			<td>Enter UserName: </td>
+			<td><input type="text" required/></td>
+		</tr>
+		<tr>
+			<td>Enter Password: </td>
+			<td><input type="password" required/></td>
+		</tr>
+		<tr>
+			<td>Confirm Password: </td>
+			<td><input type="password" required/></td>
+		</tr>
+		<tr>
+			<td><label for="gender">Select Gender: </label></td>
+			<td><input type="radio" name="gender"/>Male <input type="radio" name="gender"/>Female</td>
+		</tr>
+		<tr>
+			<td><label for="mobileNumber">Enter mobile Number: </label></td>
+			<td><input type="tel"/></td>
+		</tr>
+		<tr>
+			<td><label for="dob">Enter DOB: </label></td>
+			<td><input type="date"/></td>
+		</tr>
+		<tr>
+			<td><label for="address">Enter Address: </label></td>
+			<td><textarea name="address"></textarea></td>
+		</tr>
+		<tr>
+			<td><label for="qualification">Select Qualification: </label></td>
+			<td>
+				<select name="qualification">
+					<option value="select">select</option>
+					<option value="SSC">SSC</option>
+					<option value="INTERMEDIATE">INTERMEDIATE</option>
+					<option value="DIPLOMA">DIPLOMA</option>
+					<option value="UG">UNDER GRADUATE</option>
+					<option value="PG">POST GRADUATE</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="skills">Choose your Skills: </label></td>
+			<td>
+				<select name="skills">
+					<option value="Java">Java</option>
+					<option value="HTML5">HTML5</option>
+					<option value="CSS3">CSS3</option>
+					<option value="JavaScript">JavaScript</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="prefShift">Prefered Shift: </label></td>
+			<td><input type="checkbox"/>DayShift  <input type="checkbox"/>NightShift  <input type="checkbox"/>DayShift/NightShift</td>
+		</tr>
+		<tr>
+			<td><label for="resumeFile">Upload your resume: </label></td>
+			<td><input type="file"/></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:center;"><input type="submit" value="Register"/>          <input type="reset" value="reset"/></td>
+		</tr>
+	</table>
+	</form>
+
+</body>
+</html>

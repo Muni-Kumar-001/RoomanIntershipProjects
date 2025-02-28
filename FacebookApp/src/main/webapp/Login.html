@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+		<style>
+			input{
+				border-radius:10px;
+			}
+			input[type="submit"]{
+				block-size:30px;
+				background-color:green;
+				color:white;
+				width:50%;
+				font-weight:800;
+			}
+			body{
+				background-image:url("./Images/simpleBg.png");
+				background-size:cover;
+				background-repeat:no-repeat;
+			}
+			form{
+				background-color:#03A9F4;
+				color:white;
+				border-radius:20px;
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform:translate(-50%,-50%);
+				text-align:center;
+   				block-size: 280px;
+    			padding: 20px;
+    			box-shadow: 10px 10px 10px black;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<center>
+			<h2>WELCOME TO FACEBOOK</h2>
+		</center>
+		<header class="header">
+			<form action="LoginSrv" method="">
+				<h2>Login page</h2></br>
+				<label for="username">Enter UserName: </label>
+				<input type="text" name="username" required/><br/><br/>
+				<label for="password">Enter Password: </label>
+				<input type="password" name="password" required/><br/><br/>
+				<input type="submit" value="Login" name="LoginButton"/><br></br>
+				
+				<p>
+					If you have no account 
+					<a href="./Register.html">click here</a>
+				</p>
+			</form>
+		</header>	
+	</body>
+</html>
