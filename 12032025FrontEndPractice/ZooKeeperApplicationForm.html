@@ -51,7 +51,6 @@
         }
 
         label {
-            width: 200px;
             font-weight: bold;
             display: block;
             margin-top: 10px;
@@ -92,6 +91,12 @@
         .required {
             color: red;
         }
+        .firstBox label,.secondBox label{
+            width:250px;
+        }
+        .firstBox input,.secondBox input{
+            width:250px;
+        }
     </style>
 </head>
 
@@ -101,7 +106,7 @@
     <p>Please complete the form. Mandatory fields are marked with a <span class="required">*</span></p>
 
     <form>
-        <fieldset>
+        <fieldset class="firstBox">
             <legend>Contact Details</legend>
             <table>
                 <tr>
@@ -131,7 +136,7 @@
             </table>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="secondBox">
             <legend>Personal Information</legend>
             <table>
                 <tr>
@@ -159,7 +164,7 @@
                         <label for="reason">When did you first know you wanted to be a zoo-keeper?</label>
                     </td>
                     <td>
-                        <textarea id="reason" name="reason" rows="4"></textarea>
+                        <textarea id="reason" name="reason" rows="4" cols="32" style="overflow-y: scroll;"></textarea>
                     </td>
                 </tr>
             </table>
