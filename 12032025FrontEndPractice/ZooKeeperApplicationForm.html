@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Keeper Application Form</title>
+    <style>
+        body {
+            margin: 0px;
+            border: none;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            height: 90vh;
+            width: 98vw;
+            background-image: url("https://thumbs.dreamstime.com/b/cartoon-zoo-amusement-park-illustration-children-happy-colorful-32359464.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-style: italic;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 5px inset aquamarine;
+            border-radius: 10px;
+            background: black;
+            color: white;
+            opacity: 70%;
+            box-shadow: 10px 10px 10px aqua;
+        }
+
+        fieldset {
+            border: 1px solid aqua;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            width: 200px;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #911717;
+            border-radius: 5px;
+        }
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: white;
+            font-weight: bold;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background: darkblue;
+            color: white;
+        }
+
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Zoo Keeper Application Form</h1>
+    <p>Please complete the form. Mandatory fields are marked with a <span class="required">*</span></p>
+
+    <form>
+        <fieldset>
+            <legend>Contact Details</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Name <span class="required">*</span></label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" name="name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="telephone">Telephone</label>
+                    </td>
+                    <td>
+                        <input type="tel" id="telephone" name="telephone">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email <span class="required">*</span></label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" name="email" required>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Personal Information</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="age">Age <span class="required">*</span></label>
+                    </td>
+                    <td>
+                        <input type="number" id="age" name="age" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gender">Gender</label>
+                    </td>
+                    <td>
+                        <select id="gender" name="gender">
+                            <option>Female</option>
+                            <option>Male</option>
+                            <option>Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="reason">When did you first know you wanted to be a zoo-keeper?</label>
+                    </td>
+                    <td>
+                        <textarea id="reason" name="reason" rows="4"></textarea>
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Pick Your Favorite Animals</legend>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="zebra" name="animals" value="zebra"> Zebra</label>
+                <label><input type="checkbox" id="cat" name="animals" value="cat"> Cat</label>
+                <label><input type="checkbox" id="anaconda" name="animals" value="anaconda"> Anaconda</label>
+                <label><input type="checkbox" id="human" name="animals" value="human"> Human</label>
+                <label><input type="checkbox" id="elephant" name="animals" value="elephant"> Elephant</label>
+                <label><input type="checkbox" id="wildebeest" name="animals" value="wildebeest"> Wildebeest</label>
+                <label><input type="checkbox" id="pigeon" name="animals" value="pigeon"> Pigeon</label>
+                <label><input type="checkbox" id="crab" name="animals" value="crab"> Crab</label>
+            </div>
+        </fieldset>
+
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>
