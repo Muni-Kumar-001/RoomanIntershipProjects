@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Form learn</title>
+	</head>
+	
+	<body>
+		<center>
+			<h2>Please signup here</h2>
+		</center>
+			<form action="register" method="POST">
+				<label for="username">Enter UserName: </label>
+				<input type="text" id="username" name="username" required/>
+                <br/><br/>
+
+				<label for="password">Enter Password: </label>
+				<input type="password" id="password" name="password" required/>
+                <br/><br/>
+
+                <label for="confPswd">Confirm password: </label>
+                <input type="password" id="confPswd" name="confPswd"/>
+                <br/><br/>
+
+                <label>Select Gender: </label>
+                <input type="radio" id="male" name="gender" value="male"/> <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female"/> <label for="female">Female</label>
+                <br/><br/>
+
+                <label for="mbNo">Enter Mobile Number: </label>
+                <input type="tel" id="mbNo" name="mbNo"/>
+                <br/><br/>
+
+                <label for="dob">Enter DOB: </label>
+                <input type="date" id="dob" name="dob"/>
+                <br/><br/>
+
+                <label for="address">Enter address: </label>
+                <textarea id="address" name="address"></textarea>
+                <br/><br/>
+
+                <label for="qualification">Select Qualification: </label>
+                <select id="qualification" name="qualification">
+                    <option value="">Select</option>
+                    <option value="SSC">S.S.C</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="BTech">B.Tech</option>
+                    <option value="MTech">M.Tech</option>
+                </select>
+                <br/><br/>
+
+                <label for="skills">Choose your Skills: </label>
+                <select id="skills" name="skills" multiple>
+                    <option value="Java">Java</option>
+                    <option value="HTML5">HTML5</option>
+                    <option value="CSS3">CSS3</option>
+                    <option value="JavaScript">JavaScript</option>
+                </select>
+                <br/><br/>
+
+                <label>Preferred Shift: </label>
+                <input type="checkbox" id="dayShift" name="prefShift" value="DayShift"/> <label for="dayShift">Day Shift</label>
+                <input type="checkbox" id="nightShift" name="prefShift" value="NightShift"/> <label for="nightShift">Night Shift</label>
+                <input type="checkbox" id="bothShift" name="prefShift" value="DayShift/NightShift"/> <label for="bothShift">Day Shift/Night Shift</label>
+                <br/><br/>
+
+                <label for="resume">Upload your resume: </label>
+                <input type="file" id="resume" name="resume"/>
+                <br/><br/>
+
+				<input type="submit" value="Register" name="RegisterButton"/><br></br>
+                <input type="reset" value="reset"/>
+				
+				<p>
+					If already have an account 
+					<a href="./Login.html">click here</a>
+				</p>
+			</form>
+
+            <form onsubmit="changeBg(); return false;">
+                <label for="color">Pick your background color:</label>    
+                <input type="color" id="color">
+                <input type="submit" value="Change">
+            </form>
+
+            <script>
+                function changeBg() {
+                    var color = document.getElementById('color').value;
+                    document.body.style.backgroundColor = color;
+                }
+            </script>
+	</body>
+</html>

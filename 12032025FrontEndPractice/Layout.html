@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your Name">
+    <meta name="description" content="A simple HTML page using layout elements">
+    <title>Simple HTML Page</title>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Simple HTML Page</h1>
+        <p>This page demonstrates various HTML tags and attributes.</p>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="#about" title="Go to About">About</a></li>
+            <li><a href="#contact" title="Go to Contact">Contact</a></li>
+            <li><a href="#form" title="Go to Form">Form</a></li>
+            <li><a href="#table" title="Go to Table">Table</a></li>
+        </ul>
+    </nav>
+
+
+    <layout>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>This is a simple webpage built using only HTML elements.</p>
+            <img src="https://www.bing.com/images/search?view=detailV2&ccid=WUz8mtNi&id=01D16798E6B897121B8501ADB0A2B02628AF1FCB&thid=OIP.WUz8mtNiXO8hJQvLLEC_0gHaJv&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.594cfc9ad3625cef21250bcb2c40bfd2%3frik%3dyx%252bvKCaworCtAQ%26riu%3dhttp%253a%252f%252ffc00.deviantart.net%252ffs70%252fi%252f2013%252f246%252f4%252f1%252fluffy___one_piece_by_srmoro-d6kx0vu.jpg%26ehk%3duWBQNgZZcaJHojxW35usqe%252b4dkljaA6UcjrhDRpICyA%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=1685&expw=1280&q=lufy+images&simid=608049133986578887&FORM=IRPRST&ck=709703DD50F53B73E64AD5F39C5EAF06&selectedIndex=8&itb=0" alt="Sample Image" width="150" height="150">
+        </section>
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <address>
+                Email: <a href="mailto:example@example.com">example@example.com</a><br>
+                Phone: <a href="tel:+1234567890">+1234567890</a><br>
+                Address: 123 Street, City, Country
+            </address>
+        </section>
+
+        <section id="form">
+            <h2>Feedback Form</h2>
+            <form action="submit.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+                <input type="checkbox" id="subscribe" name="subscribe">
+                <label for="subscribe">Subscribe to newsletter</label><br><br>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </section>
+
+        <section id="table">
+            <h2>Sample Data Table</h2>
+            <table border="1">
+                <caption>Employee Details</caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Alice</td>
+                        <td>Manager</td>
+                        <td>$5000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bob</td>
+                        <td>Developer</td>
+                        <td>$4000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </layout>
+
+    <footer>
+        <p>&copy; 2025 Simple HTML Page. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
